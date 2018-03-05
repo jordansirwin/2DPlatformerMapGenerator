@@ -46,6 +46,11 @@ This array maps pixel colors to a tile to render. Each element has the following
 
 The texture representing the map you want to generate tiles for. Every pixel will be scanned and compared for a Tile Info mapping (or skipped if within the Alpha Threshold) and a GameObject will be instantiated based on the assigned tile prefab.
 
+When importing an image for the map be sure to set the following attributes on the texture:
+
+* Filter Mode: Point (no filter)
+* Compression: None
+* Read/Write Enabled: True
 
 ## Attributions
 
