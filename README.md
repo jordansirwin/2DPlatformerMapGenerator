@@ -31,6 +31,10 @@ I found reading pixels from textures to not always be 100% accurate due to occas
 
 Any pixels with an alpha setting equal or below this value will be ignored. 
 
+**Tile Layer**
+
+The layer to add all generated tiles too.
+
 **Missing Tile Prefab**
 
 If a pixel is assigned to a tile, but the prefab is null (unassigned), this prefab will be used instead. Typically I set this to a hot pink colored asset so it's obvious in the scene.
@@ -51,6 +55,20 @@ When importing an image for the map be sure to set the following attributes on t
 * Filter Mode: Point (no filter)
 * Compression: None
 * Read/Write Enabled: True
+
+
+## Editor Options
+
+When in the Editor, there is a custom Menu called "2DPlatformerMapGenerator" with two options:
+
+**Generate Map**
+
+Will generate the map so you can see it during editing the scene.
+
+**Clear Map**
+
+Will clear all of the generated map tiles. It is IMPORTANT to do this, otherwise they'll become permanant members of your scene :D
+
 
 ## Attributions
 

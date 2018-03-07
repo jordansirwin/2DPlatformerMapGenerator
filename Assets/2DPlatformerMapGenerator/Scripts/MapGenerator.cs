@@ -22,6 +22,9 @@ public class MapGenerator : MonoBehaviour {
 
 	[Header("Render")]
 
+	[Tooltip("Layer to apply to all tiles")]
+	[Layer]
+	public int tileLayer;
 	[Tooltip("Prefab to render if a pixel has no tile mapping")]
 	public GameObject missingTilePrefab;
 	[Space]
@@ -37,7 +40,7 @@ public class MapGenerator : MonoBehaviour {
 		GenerateMap();
 	}
 
-	void GenerateMap() {
+	public void GenerateMap() {
 		// loop through each xy coordinate in texture and generate a tile for each pixel
 		for(int x = 0; x < mapToGenerate.width; x++) {
 			for(int y = 0; y < mapToGenerate.height; y++) {
@@ -80,7 +83,8 @@ public class MapGenerator : MonoBehaviour {
 
 		// render at xy position without rotation
 		// and add a child to the parent transform
-		Instantiate(tilePrefab, position, Quaternion.identity, parentObject);
+		var tile = Instantiate(tilePrefab, position, Quaternion.identity, parentObject);
+		tile.layer = tileLayer;
 	}
 
 	bool ColorsAreEqual(Color a, Color b) {
